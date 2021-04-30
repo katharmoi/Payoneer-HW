@@ -1,0 +1,22 @@
+plugins {
+    id 'java-library'
+}
+
+java {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
+
+dependencies {
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+
+    //Unit Test
+    testImplementation "org.mockito:mockito-core:$project.mockitoCoreVersion"
+    testImplementation "io.mockk:mockk:$project.mockKVersion"
+    testImplementation "com.google.truth:truth:$project.truthVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$project.jupiterVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$project.jupiterVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:$project.jupiterVersion"
+}

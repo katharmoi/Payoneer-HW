@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion project.compiledSdkVersion
+
+    defaultConfig {
+        minSdkVersion project.minSdkVersion
+        targetSdkVersion project.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "androidx.appcompat:appcompat:$project.appCompatVersion"
+    testImplementation "junit:junit:$project.junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$project.jUnitXVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$project.espressoVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$arch_version"
+
+    //Unit Test
+    testImplementation "org.mockito:mockito-core:$project.mockitoCoreVersion"
+    testImplementation "io.mockk:mockk:$project.mockKVersion"
+    testImplementation "com.google.truth:truth:$project.truthVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$project.jupiterVersion"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$project.jupiterVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:$project.jupiterVersion"
+
+
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    implementation "com.github.davidmoten:rxjava2-extras:$rxExtrasVersion"
+
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:retrofit-mock:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpLoggingInterceptorVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rxJavaAdapterVersion"
+
+    //Module dependencies
+    implementation project(':domain')
+}
