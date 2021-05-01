@@ -50,9 +50,6 @@ project.ext {
     rxBluetoothVersion = "2.1.1"
     rxExtrasVersion = "0.1.33"
 
-    //test
-    mockKVersion = "1.10.2"
-
     //Retrofit
     retrofitVersion = "2.4.0"
     okHttpLoggingInterceptorVersion = "3.9.0"

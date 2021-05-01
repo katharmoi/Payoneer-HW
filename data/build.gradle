@@ -39,7 +39,6 @@ dependencies {
 
     //Unit Test
     testImplementation "org.mockito:mockito-core:$project.mockitoCoreVersion"
-    testImplementation "io.mockk:mockk:$project.mockKVersion"
     testImplementation "com.google.truth:truth:$project.truthVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$project.jupiterVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$project.jupiterVersion"
