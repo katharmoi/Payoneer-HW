@@ -36,7 +36,7 @@ project.ext {
     mockitoCoreVersion = "2.23.0"
 
     //Truth
-    truthVersion= "1.0"
+    truthVersion= "1.1.2"
 
     //constraint Layout
     constraintLayoutVersion = "2.0.4"
