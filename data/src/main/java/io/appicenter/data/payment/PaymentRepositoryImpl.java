@@ -1,7 +1,9 @@
-package io.appicenter.data.payment;
+ package io.appicenter.data.payment;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
 
 import io.appicenter.data.payment.adapters.PaymentMethodModelAdapter;
 import io.appicenter.data.payment.service.PaymentService;
@@ -14,6 +16,7 @@ public final class PaymentRepositoryImpl implements PaymentRepository {
     private final PaymentService paymentService;
     private final PaymentMethodModelAdapter adapter;
 
+    @Inject
     public PaymentRepositoryImpl(final PaymentService paymentService, final PaymentMethodModelAdapter adapter) {
         this.paymentService = paymentService;
         this.adapter = adapter;
