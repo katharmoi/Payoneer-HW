@@ -1,5 +1,7 @@
 package io.appicenter.domain.model;
 
+import java.util.Objects;
+
 /**
  * POJO class to hold payment method data
  */
@@ -26,5 +28,21 @@ public final class PaymentMethod {
                 ", method='" + method + '\'' +
                 ", links=" + links +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PaymentMethod that = (PaymentMethod) o;
+        return Objects.equals(code, that.code) &&
+                Objects.equals(label, that.label) &&
+                Objects.equals(method, that.method) &&
+                Objects.equals(links, that.links);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(code, label, method, links);
     }
 }

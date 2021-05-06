@@ -2,7 +2,7 @@ package io.appicenter.domain.interactor.payment;
 
 import java.util.List;
 
-import io.appicenter.domain.interactor.payment.type.SingleUseCase;
+import io.appicenter.domain.interactor.type.SingleUseCase;
 import io.appicenter.domain.model.PaymentMethod;
 import io.appicenter.domain.repository.PaymentRepository;
 import io.reactivex.Single;

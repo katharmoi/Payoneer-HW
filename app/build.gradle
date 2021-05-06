@@ -26,13 +26,22 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //Navigation
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.navigation:navigation-dynamic-features-fragment:2.3.5'
 
     //Unit Test
     testImplementation "junit:junit:$junitVersion"
@@ -62,12 +71,14 @@ dependencies {
     implementation "androidx.test:core:$androidXTestCoreVersion"
 
 
-
     //Dagger
-    testAnnotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+
     implementation "com.google.dagger:dagger:$daggerVersion"
     implementation "com.google.dagger:dagger-android:$daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
 
     //Timber
     implementation "com.jakewharton.timber:timber:$timberVersion"
@@ -87,6 +98,8 @@ dependencies {
 
     //Material
     implementation "com.google.android.material:material:$materialVersion"
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 
     //Module dependencies

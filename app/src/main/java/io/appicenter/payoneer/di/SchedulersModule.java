@@ -11,8 +11,8 @@ import io.reactivex.schedulers.Schedulers;
 
 @Module
 public class SchedulersModule {
-    private static final String MAIN_THREAD_SCHEDULER = "mainScheduler";
-    private static final String BG_SCHEDULER = "bgScheduler";
+    public static final String MAIN_THREAD_SCHEDULER = "mainScheduler";
+    public static final String BG_SCHEDULER = "bgScheduler";
 
     @Singleton
     @Provides

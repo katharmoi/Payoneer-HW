@@ -1,5 +1,8 @@
 package io.appicenter.payoneer.di;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -9,8 +12,15 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import io.appicenter.data.BuildConfig;
+import io.appicenter.data.payment.PaymentRepositoryImpl;
+import io.appicenter.data.payment.adapters.PaymentMethodModelAdapter;
 import io.appicenter.data.payment.service.PaymentApi;
-import okhttp3.Cache;
+import io.appicenter.data.payment.service.PaymentService;
+import io.appicenter.data.payment.service.PaymentServiceImpl;
+import io.appicenter.data.util.NetworkUtilsImpl;
+import io.appicenter.domain.repository.PaymentRepository;
+import io.appicenter.domain.utils.NetworkUtils;
+import io.appicenter.payoneer.utils.NoNetworkException;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -37,13 +47,54 @@ public class DataModule {
 
     @Singleton
     @Provides
+    public PaymentService providePaymentService(PaymentApi api) {
+        return new PaymentServiceImpl(api);
+    }
+
+    @Singleton
+    @Provides
+    public ConnectivityManager provideConnectivityManager(Context context) {
+        return (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+    }
+
+    @Singleton
+    @Provides
+    public NetworkUtils provideNetworkUtils(ConnectivityManager connectivityManager) {
+        return new NetworkUtilsImpl(connectivityManager);
+    }
+
+
+    @Singleton
+    @Provides
+    public PaymentRepository providePaymentRepository(PaymentService service, PaymentMethodModelAdapter adapter) {
+        return new PaymentRepositoryImpl(service, adapter);
+    }
+
+    @Singleton
+    @Provides
+    @Named(OKHTTP_NETWORK_INTERCEPTOR)
+    public Interceptor provideNetworkInterceptor(NetworkUtils networkUtils) throws NoNetworkException {
+
+        return chain -> {
+            if (!networkUtils.isConnected()) {
+                throw new NoNetworkException();
+            }
+
+            return chain.proceed(chain.request().newBuilder().build());
+        };
+
+    }
+
+
+    @Singleton
+    @Provides
     public OkHttpClient provideOkHttpClient(
-            Cache cache,
             HttpLoggingInterceptor loggingInterceptor,
             @Named(OKHTTP_NETWORK_INTERCEPTOR) Interceptor networkInterceptor
     ) {
         return new OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
+                .addInterceptor(networkInterceptor)
                 .build();
     }
 

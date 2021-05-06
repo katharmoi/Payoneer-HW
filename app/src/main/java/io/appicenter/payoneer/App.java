@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
 import io.appicenter.data.BuildConfig;
+import io.appicenter.payoneer.di.DaggerAppComponent;
 import timber.log.Timber;
 
 public class App extends DaggerApplication {
@@ -23,7 +24,6 @@ public class App extends DaggerApplication {
     @Override
     protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
 
-        //return DaggerAppComponent.builder().application(this).build();
-        return null;
+        return DaggerAppComponent.builder().create(this);
     }
 }

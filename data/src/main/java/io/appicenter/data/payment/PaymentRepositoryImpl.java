@@ -16,7 +16,6 @@ public final class PaymentRepositoryImpl implements PaymentRepository {
     private final PaymentService paymentService;
     private final PaymentMethodModelAdapter adapter;
 
-    @Inject
     public PaymentRepositoryImpl(final PaymentService paymentService, final PaymentMethodModelAdapter adapter) {
         this.paymentService = paymentService;
         this.adapter = adapter;

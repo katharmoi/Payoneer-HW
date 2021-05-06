@@ -11,7 +11,6 @@ public final class PaymentServiceImpl implements PaymentService {
 
     private final PaymentApi paymentAPI;
 
-    @Inject
     public PaymentServiceImpl(final PaymentApi paymentAPI) {
         this.paymentAPI = paymentAPI;
     }
