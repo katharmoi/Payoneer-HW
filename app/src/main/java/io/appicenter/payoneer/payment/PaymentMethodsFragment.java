@@ -63,6 +63,7 @@ public class PaymentMethodsFragment extends DaggerFragment {
         binding.productsEmptyView.emptyRetry.setOnClickListener(view -> {
             viewModel.getPaymentMethods();
         });
+        viewModel.getPaymentMethods();
     }
 
 

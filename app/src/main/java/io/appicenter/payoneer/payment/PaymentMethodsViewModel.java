@@ -27,7 +27,6 @@ public class PaymentMethodsViewModel extends BaseViewModel {
         this.getPaymentMethodsUseCase = getPaymentMethodsUseCase;
         this.bgScheduler = bgScheduler;
         this.mainScheduler = mainScheduler;
-        getPaymentMethods();
     }
 
     private final MutableLiveData<Response<List<PaymentMethod>>> _paymentMethods = new MutableLiveData<>();

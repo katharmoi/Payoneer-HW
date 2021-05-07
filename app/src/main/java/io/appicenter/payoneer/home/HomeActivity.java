@@ -54,7 +54,7 @@ public class HomeActivity extends DaggerAppCompatActivity {
         NavigationUI.setupWithNavController(binding.collapsingToolbarLayout, binding.toolbar, navController, appBarConfiguration);
 
         sb = Snackbar.make(binding.homeActivityLayout, "", Snackbar.LENGTH_SHORT);
-
+        viewModel.observeNetwork();
     }
 
     private void parseNetworkStatus(Boolean networkStatus) {

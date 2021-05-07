@@ -19,8 +19,8 @@ public class HomeViewModel extends BaseViewModel {
         this.observeNetworkUseCase = observeNetworkUseCase;
         this.mainScheduler = mainScheduler;
 
-        observeNetwork();
     }
+
 
     private final MutableLiveData<Boolean> _networkState = new MutableLiveData<>();
     public final LiveData<Boolean> networkState = _networkState;

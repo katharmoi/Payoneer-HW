@@ -14,6 +14,7 @@ dependencies {
 
     //Unit Test
     testImplementation "org.mockito:mockito-core:$project.mockitoCoreVersion"
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
     testImplementation "com.google.truth:truth:$project.truthVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-api:$project.jupiterVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$project.jupiterVersion"
