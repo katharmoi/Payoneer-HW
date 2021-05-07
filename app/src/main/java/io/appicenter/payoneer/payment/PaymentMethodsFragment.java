@@ -30,7 +30,7 @@ import io.appicenter.payoneer.utils.Response;
 public class PaymentMethodsFragment extends DaggerFragment {
 
     @Inject
-    PaymentMethodsViewModelFactory factory;
+    PaymentViewModelFactory factory;
 
     @Inject
     ErrorParser errorParser;
@@ -58,7 +58,7 @@ public class PaymentMethodsFragment extends DaggerFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        PaymentMethodsViewModel viewModel = new ViewModelProvider(this, factory).get(PaymentMethodsViewModel.class);
+        PaymentViewModel viewModel = new ViewModelProvider(this, factory).get(PaymentViewModel.class);
         viewModel.paymentMethods.observe(getViewLifecycleOwner(), this::parseOrder);
         binding.productsEmptyView.emptyRetry.setOnClickListener(view -> {
             viewModel.getPaymentMethods();

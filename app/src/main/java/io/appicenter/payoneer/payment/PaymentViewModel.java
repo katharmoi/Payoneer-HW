@@ -14,13 +14,13 @@ import io.appicenter.payoneer.utils.Response;
 import io.reactivex.Scheduler;
 import timber.log.Timber;
 
-public class PaymentMethodsViewModel extends BaseViewModel {
+public class PaymentViewModel extends BaseViewModel {
 
     private final GetPaymentMethodsUseCase getPaymentMethodsUseCase;
     private final Scheduler bgScheduler;
     private final Scheduler mainScheduler;
 
-    public PaymentMethodsViewModel(
+    public PaymentViewModel(
             GetPaymentMethodsUseCase getPaymentMethodsUseCase,
             Scheduler bgScheduler,
             Scheduler mainScheduler) {

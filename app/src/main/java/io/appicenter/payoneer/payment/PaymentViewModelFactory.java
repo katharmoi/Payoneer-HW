@@ -14,16 +14,16 @@ import io.reactivex.Scheduler;
 
 
 @PerActivity
-public class PaymentMethodsViewModelFactory implements ViewModelProvider.Factory {
+public class PaymentViewModelFactory implements ViewModelProvider.Factory {
 
     private final Scheduler bgScheduler;
     private final Scheduler mainScheduler;
     private final GetPaymentMethodsUseCase getPaymentMethodsUseCase;
 
     @Inject
-    public PaymentMethodsViewModelFactory(final GetPaymentMethodsUseCase getPaymentMethodsUseCase,
-                                          final @Named(SchedulersModule.BG_SCHEDULER) Scheduler bgScheduler,
-                                          final @Named(SchedulersModule.MAIN_THREAD_SCHEDULER) Scheduler mainScheduler) {
+    public PaymentViewModelFactory(final GetPaymentMethodsUseCase getPaymentMethodsUseCase,
+                                   final @Named(SchedulersModule.BG_SCHEDULER) Scheduler bgScheduler,
+                                   final @Named(SchedulersModule.MAIN_THREAD_SCHEDULER) Scheduler mainScheduler) {
         this.getPaymentMethodsUseCase = getPaymentMethodsUseCase;
         this.mainScheduler = mainScheduler;
         this.bgScheduler = bgScheduler;
@@ -34,9 +34,9 @@ public class PaymentMethodsViewModelFactory implements ViewModelProvider.Factory
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
-        if (modelClass.isAssignableFrom(PaymentMethodsViewModel.class)) {
+        if (modelClass.isAssignableFrom(PaymentViewModel.class)) {
 
-            return (T) new PaymentMethodsViewModel(
+            return (T) new PaymentViewModel(
                     getPaymentMethodsUseCase,
                     bgScheduler,
                     mainScheduler
