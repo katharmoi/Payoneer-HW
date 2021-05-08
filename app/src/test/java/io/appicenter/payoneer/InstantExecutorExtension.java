@@ -10,7 +10,7 @@ import org.junit.jupiter.api.extension.ExtensionContext;
 
 public class InstantExecutorExtension implements BeforeEachCallback, AfterEachCallback {
     @Override
-    public void beforeEach(ExtensionContext context) throws Exception {
+    public void beforeEach(ExtensionContext context) {
         ArchTaskExecutor.getInstance().setDelegate(new TaskExecutor() {
             @Override
             public void executeOnDiskIO(@NonNull Runnable runnable) {
@@ -30,7 +30,7 @@ public class InstantExecutorExtension implements BeforeEachCallback, AfterEachCa
     }
 
     @Override
-    public void afterEach(ExtensionContext context) throws Exception {
+    public void afterEach(ExtensionContext context) {
         ArchTaskExecutor.getInstance().setDelegate(null);
     }
 }

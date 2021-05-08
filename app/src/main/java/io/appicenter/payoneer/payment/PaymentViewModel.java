@@ -7,7 +7,6 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.List;
 
 import io.appicenter.domain.interactor.payment.GetPaymentMethodsUseCase;
-import io.appicenter.domain.interactor.system.ObserveNetworkUseCase;
 import io.appicenter.domain.model.PaymentMethod;
 import io.appicenter.payoneer.base.BaseViewModel;
 import io.appicenter.payoneer.utils.Response;

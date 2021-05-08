@@ -60,9 +60,7 @@ public class PaymentMethodsFragment extends DaggerFragment {
         super.onActivityCreated(savedInstanceState);
         PaymentViewModel viewModel = new ViewModelProvider(this, factory).get(PaymentViewModel.class);
         viewModel.paymentMethods.observe(getViewLifecycleOwner(), this::parseOrder);
-        binding.paymentMethodsEmptyView.emptyRetry.setOnClickListener(view -> {
-            viewModel.getPaymentMethods();
-        });
+        binding.paymentMethodsEmptyView.emptyRetry.setOnClickListener(view -> viewModel.getPaymentMethods());
         viewModel.getPaymentMethods();
     }
 

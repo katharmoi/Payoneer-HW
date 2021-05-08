@@ -3,8 +3,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.inject.Inject;
-
 import io.appicenter.data.payment.adapters.PaymentMethodModelAdapter;
 import io.appicenter.data.payment.service.PaymentService;
 import io.appicenter.data.payment.service.model.ApiPaymentMethod;

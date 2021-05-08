@@ -2,8 +2,6 @@ package io.appicenter.data.payment.service;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 import io.appicenter.data.payment.service.model.ApiPaymentMethod;
 import io.reactivex.Single;
 

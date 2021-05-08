@@ -12,9 +12,7 @@ import io.appicenter.domain.interactor.payment.GetPaymentMethodsUseCase;
 import io.appicenter.domain.interactor.system.ObserveNetworkUseCase;
 import io.appicenter.domain.repository.PaymentRepository;
 import io.appicenter.domain.utils.NetworkUtils;
-import io.appicenter.payoneer.App;
 import io.appicenter.payoneer.home.HomeActivity;
-import io.appicenter.payoneer.home.HomeActivityModule;
 import io.appicenter.payoneer.payment.PaymentMethodsFragment;
 
 @Module

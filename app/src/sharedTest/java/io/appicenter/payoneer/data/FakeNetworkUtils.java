@@ -6,7 +6,7 @@ import io.reactivex.Observable;
 public class FakeNetworkUtils implements NetworkUtils {
 
     public static boolean connected;
-    public static Observable<Boolean> networkStates = Observable.empty();
+    public static final Observable<Boolean> networkStates = Observable.empty();
 
     @Override
     public boolean isConnected() {

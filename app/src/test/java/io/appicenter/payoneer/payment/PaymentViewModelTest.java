@@ -91,7 +91,7 @@ class PaymentViewModelTest {
         @DisplayName("When there is no error")
         class SuccessState {
 
-            List<PaymentMethod> testList = new ArrayList<>();
+            final List<PaymentMethod> testList = new ArrayList<>();
 
             @BeforeEach
             void setUp() {

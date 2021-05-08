@@ -7,7 +7,7 @@ import java.util.List;
 
 public class TestObserver<T> implements Observer<T> {
 
-    public List<T> observedValues = new ArrayList<>();
+    public final List<T> observedValues = new ArrayList<>();
 
     @Override
     public void onChanged(T t) {

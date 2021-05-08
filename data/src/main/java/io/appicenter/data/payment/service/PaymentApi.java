@@ -1,6 +1,5 @@
 package io.appicenter.data.payment.service;
 
-import io.appicenter.data.payment.service.model.Networks;
 import io.appicenter.data.payment.service.model.Response;
 import io.appicenter.data.util.NetworkConfig;
 import io.reactivex.Single;

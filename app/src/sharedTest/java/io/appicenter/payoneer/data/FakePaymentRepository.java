@@ -1,6 +1,5 @@
 package io.appicenter.payoneer.data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import io.appicenter.domain.model.PaymentMethod;

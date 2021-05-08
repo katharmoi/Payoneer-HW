@@ -13,7 +13,7 @@ import okhttp3.OkHttpClient;
 
 public class IdlingResourceRule implements TestRule {
 
-    OkHttpClient client = DaggerAppComponent.builder()
+    final OkHttpClient client = DaggerAppComponent.builder()
             .application(App.instance)
             .build()
             .getOkHttpClient();
