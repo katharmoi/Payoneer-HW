@@ -1,4 +1,4 @@
-package io.appicenter.domain.interactor.payment.type;
+package io.appicenter.domain.interactor.type;
 
 
 import io.reactivex.Single;

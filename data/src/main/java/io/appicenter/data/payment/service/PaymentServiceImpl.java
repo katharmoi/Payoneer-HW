@@ -15,6 +15,6 @@ public final class PaymentServiceImpl implements PaymentService {
 
     @Override
     public Single<List<ApiPaymentMethod>> getPaymentMethods() {
-        return paymentAPI.getPaymentMethods();
+        return paymentAPI.getPaymentMethods().map(response -> response.networks.applicable);
     }
 }

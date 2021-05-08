@@ -26,49 +26,85 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    sourceSets {
+        test {
+            java.srcDirs += "src/sharedTest/java"
+        }
+        androidTest {
+            java.srcDirs += "sharedTestDir"
+        }
+    }
+
+    testOptions.unitTests {
+        includeAndroidResources = true
+        returnDefaultValues = true
+    }
 }
 
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //Navigation
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.navigation:navigation-dynamic-features-fragment:2.3.5'
 
     //Unit Test
     testImplementation "junit:junit:$junitVersion"
+
+    //Mockito
     testImplementation "org.mockito:mockito-core:$mockitoCoreVersion"
-    testImplementation "io.mockk:mockk:$mockKVersion"
+
+    //Truth
     testImplementation "com.google.truth:truth:$truthVersion"
+
+    //Jupiter
     testImplementation "org.junit.jupiter:junit-jupiter-api:$jupiterVersion"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$jupiterVersion"
     testImplementation "org.junit.jupiter:junit-jupiter-params:$jupiterVersion"
-    testImplementation "androidx.arch.core:core-testing:$arch_version"
-    testImplementation "androidx.test:runner:$runnerVersion"
-    testImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
-    testImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
-    testImplementation "androidx.test.ext:junit:$jUnitXVersion"
-    testImplementation "org.robolectric:robolectric:$robolectricVersion"
 
-
-    //Android Test
+    //Android runner&rules
     androidTestImplementation "androidx.test:runner:$runnerVersion"
+    androidTestImplementation "androidx.test:core:$androidXTestCoreVersion"
+    androidTestImplementation "androidx.test.ext:junit:$jUnitXVersion"
+    androidTestImplementation "androidx.test:rules:$androidXTestRulesVersion"
+
+    testImplementation "androidx.test:runner:$runnerVersion"
+    testImplementation "androidx.test:core:$androidXTestCoreVersion"
+    testImplementation "androidx.test.ext:junit:$jUnitXVersion"
+    testImplementation "androidx.test:rules:$androidXTestRulesVersion"
+    testImplementation "androidx.arch.core:core-testing:$arch_version"
+
+    //Espresso
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
-    androidTestImplementation "androidx.test.ext:junit:$jUnitXVersion"
-    androidTestImplementation "org.robolectric:annotations:$robolectricVersion"
+
+    testImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    testImplementation "androidx.test.espresso:espresso-contrib:$espressoVersion"
 
 
-    testImplementation "androidx.test:rules:$androidXTestRulesVersion"
+    //Robolectric
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+
+    //Fragment Test
     debugImplementation "androidx.fragment:fragment-testing:$fragmentVersion"
-    implementation "androidx.test:core:$androidXTestCoreVersion"
-
-
 
     //Dagger
-    testAnnotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
     implementation "com.google.dagger:dagger:$daggerVersion"
     implementation "com.google.dagger:dagger-android:$daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+    testAnnotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
 
     //Timber
     implementation "com.jakewharton.timber:timber:$timberVersion"
@@ -88,6 +124,9 @@ dependencies {
 
     //Material
     implementation "com.google.android.material:material:$materialVersion"
+
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 
     //Module dependencies

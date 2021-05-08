@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Payoneer</string>
+    <string name="fragment_payment_method_name">Payment Methods</string>
+    <string name="payment_method">payment method</string>
+    <string name="error_unauthorised_user">Unable to authorise this operation. Please try again.</string>
+    <string name="error_forbidden">Your operation was forbidden - please try again.</string>
+    <string name="error_internal_server">Our server was unable to process your request. Please try again.</string>
+    <string name="error_bad_request">Your operation could not be performed - please try again.</string>
+    <string name="error_not_found">Requested url can not be found - please try again.</string>
+    <string name="error_no_network">Please check your connection and try again</string>
+    <string name="error_generic">An error occurred - please retry.</string>
+    <string name="loading_msg">Loading data…</string>
+    <string name="notification_no_network">No Network!</string>
+    <string name="notification_reconnect">Reconnected to network</string>
+    <string name="notification_cached_data">No internet! Displaying cached data.</string>
+    <string name="exclamation">Oooops!</string>
 </resources>

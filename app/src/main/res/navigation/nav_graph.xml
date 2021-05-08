@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/paymentMethodsFragment">
+
+    <fragment
+        android:id="@+id/paymentMethodsFragment"
+        android:name="io.appicenter.payoneer.payment.PaymentMethodsFragment"
+        android:label="payment_methods_fragment"
+        tools:layout="@layout/payment_methods_fragment" />
+</navigation>
