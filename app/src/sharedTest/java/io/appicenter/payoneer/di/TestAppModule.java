@@ -1,5 +1,10 @@
-package io.appicenter.payoneer.home;
+package io.appicenter.payoneer.di;
 
+import android.content.Context;
+
+import javax.inject.Singleton;
+
+import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 import dagger.android.ContributesAndroidInjector;
@@ -7,26 +12,36 @@ import io.appicenter.domain.interactor.payment.GetPaymentMethodsUseCase;
 import io.appicenter.domain.interactor.system.ObserveNetworkUseCase;
 import io.appicenter.domain.repository.PaymentRepository;
 import io.appicenter.domain.utils.NetworkUtils;
-import io.appicenter.payoneer.di.PerActivity;
-import io.appicenter.payoneer.di.PerFragment;
+import io.appicenter.payoneer.App;
+import io.appicenter.payoneer.home.HomeActivity;
+import io.appicenter.payoneer.home.HomeActivityModule;
 import io.appicenter.payoneer.payment.PaymentMethodsFragment;
 
 @Module
-public abstract class HomeActivityModule {
+public abstract class TestAppModule {
 
-    @PerFragment
-    @ContributesAndroidInjector
-    abstract PaymentMethodsFragment paymentMethodsScreenInjector();
+    @Singleton
+    @Binds
+    public abstract Context provideAppContext(TestApp app);
 
     @PerActivity
+    @ContributesAndroidInjector(modules = {TestHomeActivityModule.class})
+    public abstract HomeActivity bindHomeScreen();
+
+    @PerActivity
+    @ContributesAndroidInjector
+    public abstract PaymentMethodsFragment paymentMethodsScreenInjector();
+
+    @Singleton
     @Provides
     public static GetPaymentMethodsUseCase provideGetPaymentMethodsUseCase(PaymentRepository paymentRepository) {
         return new GetPaymentMethodsUseCase(paymentRepository);
     }
 
-    @PerActivity
+    @Singleton
     @Provides
     public static ObserveNetworkUseCase provideObserveNetworkUseCase(NetworkUtils networkUtils) {
         return new ObserveNetworkUseCase(networkUtils);
     }
+
 }

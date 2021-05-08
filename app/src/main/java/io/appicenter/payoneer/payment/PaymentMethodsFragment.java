@@ -60,7 +60,7 @@ public class PaymentMethodsFragment extends DaggerFragment {
         super.onActivityCreated(savedInstanceState);
         PaymentViewModel viewModel = new ViewModelProvider(this, factory).get(PaymentViewModel.class);
         viewModel.paymentMethods.observe(getViewLifecycleOwner(), this::parseOrder);
-        binding.productsEmptyView.emptyRetry.setOnClickListener(view -> {
+        binding.paymentMethodsEmptyView.emptyRetry.setOnClickListener(view -> {
             viewModel.getPaymentMethods();
         });
         viewModel.getPaymentMethods();
@@ -96,14 +96,14 @@ public class PaymentMethodsFragment extends DaggerFragment {
 
     private void handleNoNetwork() {
         if (adapter.getCurrentList().isEmpty()) {
-            binding.productsEmptyView.getRoot().setVisibility(View.VISIBLE);
+            binding.paymentMethodsEmptyView.getRoot().setVisibility(View.VISIBLE);
         } else {
             showErrorSnack(getString(R.string.notification_cached_data));
         }
     }
 
     private void setIdleState() {
-        binding.productsEmptyView.getRoot().setVisibility(View.GONE);
+        binding.paymentMethodsEmptyView.getRoot().setVisibility(View.GONE);
         binding.paymentMethodsProgress.setVisibility(View.GONE);
     }
 }

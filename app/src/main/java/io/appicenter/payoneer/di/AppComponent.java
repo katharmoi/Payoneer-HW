@@ -1,10 +1,15 @@
 package io.appicenter.payoneer.di;
 
+import androidx.annotation.VisibleForTesting;
+
 import javax.inject.Singleton;
+
+import dagger.BindsInstance;
 import dagger.Component;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 import io.appicenter.payoneer.App;
+import okhttp3.OkHttpClient;
 
 @Singleton
 @Component(modules = {
@@ -15,6 +20,13 @@ import io.appicenter.payoneer.App;
 public interface AppComponent extends AndroidInjector<App> {
 
     @Component.Builder
-    abstract class Builder extends AndroidInjector.Builder<App> {
+    interface Builder {
+        @BindsInstance
+        Builder application(App app);
+
+        AppComponent build();
     }
+
+    @VisibleForTesting
+    OkHttpClient getOkHttpClient();
 }

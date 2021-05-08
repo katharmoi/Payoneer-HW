@@ -22,7 +22,7 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/list_item_payment_methods" />
     <include
-        android:id="@+id/products_empty_view"
+        android:id="@+id/payment_methods_empty_view"
         android:visibility="gone"
         layout="@layout/empty_methods"
         android:layout_width="match_parent"
