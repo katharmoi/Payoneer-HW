@@ -8,10 +8,10 @@ import io.appicenter.domain.repository.PaymentRepository;
 import io.reactivex.Single;
 
 public class FakePaymentRepository implements PaymentRepository {
-    public static List<PaymentMethod> result;
+    public static Single<List<PaymentMethod>> methods = Single.never();
 
     @Override
     public Single<List<PaymentMethod>> getPaymentMethods() {
-        return Single.just(new ArrayList<>());
+        return methods;
     }
 }
