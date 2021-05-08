@@ -28,8 +28,8 @@ App consists of 3 modules
 
 ### Screens
 
-![alt tag](https://drive.google.com/file/d/1Crv46WigNd91_aKZ4HDokrE8ChJQRUwv/view?usp=sharing)
-![alt tag](https://drive.google.com/file/d/1Crv46WigNd91_aKZ4HDokrE8ChJQRUwv/view?usp=sharing)
-![alt tag](https://drive.google.com/file/d/1CnxAmDsZHauDBsgfYWyF4_PW_jkIqKvU/view?usp=sharing)
-![alt tag](https://drive.google.com/file/d/1CUSpJSeOjzgXHo4bCDJY-ez_j6Yk1wXm/view?usp=sharing)
+![image](https://drive.google.com/file/d/1Crv46WigNd91_aKZ4HDokrE8ChJQRUwv/view?usp=sharing)
+![image](https://drive.google.com/file/d/1Crv46WigNd91_aKZ4HDokrE8ChJQRUwv/view?usp=sharing)
+![image](https://drive.google.com/file/d/1CnxAmDsZHauDBsgfYWyF4_PW_jkIqKvU/view?usp=sharing)
+![image](https://drive.google.com/file/d/1CUSpJSeOjzgXHo4bCDJY-ez_j6Yk1wXm/view?usp=sharing)
 
