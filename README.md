@@ -20,6 +20,7 @@ App consists of 3 modules
 - Dagger2
 - Picasso
 - Architecture Components(LiveData, ViewModel, View Binding)
+- Navigation Component
 - Espresso
 - Robolectric
 - Mockito
@@ -28,8 +29,8 @@ App consists of 3 modules
 
 ### Screens
 
-![image](https://drive.google.com/file/d/1Crv46WigNd91_aKZ4HDokrE8ChJQRUwv/view?usp=sharing)
-![image](https://drive.google.com/file/d/1Crv46WigNd91_aKZ4HDokrE8ChJQRUwv/view?usp=sharing)
-![image](https://drive.google.com/file/d/1CnxAmDsZHauDBsgfYWyF4_PW_jkIqKvU/view?usp=sharing)
-![image](https://drive.google.com/file/d/1CUSpJSeOjzgXHo4bCDJY-ez_j6Yk1wXm/view?usp=sharing)
+<img src="https://drive.google.com/uc?export=view&id=1Crv46WigNd91_aKZ4HDokrE8ChJQRUwv" width="200">
+<img src="https://drive.google.com/uc?export=view&id=1Co4Mp4U_tfRhXjCkY6mvDgf4I-BoJ6Cn" width="200">
+<img src="https://drive.google.com/uc?export=view&id=1CnxAmDsZHauDBsgfYWyF4_PW_jkIqKvU" width="200">
+<img src="https://drive.google.com/uc?export=view&id=1CUSpJSeOjzgXHo4bCDJY-ez_j6Yk1wXm" width="200">
 
